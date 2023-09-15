@@ -1,0 +1,65 @@
+FAT FUSE
+
+Implementacion incompleta (FAT)
+
+borrar directorios no esta echo
+
+
+1. Registrar la actividad del usuario
+2. Esconder el registro
+3. Borrar archivos y directorios
+
+FORMATO FAT:
+
+darle un tipo de estructura a un pedazo de memoria que tenemos
+conjunto seguido de bytes que quiero manipular
+Es un PROTOCOLO
+sistema FAT: primero boot, luego tabla FAT, y sector de datos
+
+FAT lo primero que lee es el boot te dice donde esta el cluster a partir de donde se lee la memoria
+en el medio esta la tabla FAT le da estructura al sector de datos.
+entrada directorio en la 30 min aprox
+
+tabla fat 0 y 1 NO SE USAN
+directorio raiz en el cluster 2(normalmente)
+ESTA EN LITTLE ENDIAN >:(
+
+
+End of File : FF FF FF 0F
+
+Como se corre:
+./fat-fuse ../resources/bb_fs.img mnt
+./fat-fuse  (imagen)                  (punto de montaje)
+
+Correr en foreground:
+
+./fat-fuse -f ../resources/bb_fs.img mnt
+Desmontar:
+umout mnt 
+
+para saber si se escribio hay que volver a montar la imagen
+ENTREGA
+15 de nov (15/11)
+
+clang-formal para la consistencia del estilo del codigo 
+
+*flag para remover contenido previo al crear archivo: O_TRUNC
+para que el archivo sea escribible y leible por el dueño: S_IRUSR|S_IWUSR 
+
+*DEBUGGING: el comando strace tool provides an awesome way to see what programs are up
+to. Al correrlo, muestra que llamadas a sistema hace un programa, see
+the arguments and return codes.
+The tool also takes some arguments which can be quite useful. For example, -f follows any fork’d children too; -t reports the time of day
+at each call; -e trace=open,close,read,write only traces calls to
+those system calls and ignores all others. There are many other flags; read
+the man pages and find out how to harness this wonderful tool.
+
+*REMOVER FILES : FUNCION unlink
+
+
+parte 2
+FAT_CLUSTER_BAD_SECTOR para marcar como dañado o reservado
+
+fat_table.h: (EL CUSTER ESTA RESERVADO O ES DAÑADO?)
+bool fat_table_cluster_is_bad_sector(u32 cluster);
+

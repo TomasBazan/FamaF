@@ -1,0 +1,29 @@
+Running suite binary_search_tree
+test_hierarchy_tree.c:50:P:Binary Search Tree functions:test_init_destroy:0: Passed
+test_hierarchy_tree.c:56:P:Binary Search Tree functions:test_destroy_null:0: Passed
+test_hierarchy_tree.c:64:P:Binary Search Tree functions:test_insert_null:0: Passed
+test_hierarchy_tree.c:71:P:Binary Search Tree functions:test_insert_null_tree:0: Passed
+test_hierarchy_tree.c:37:P:Binary Search Tree functions:test_insert_many:0: Passed
+test_hierarchy_tree.c:88:P:Binary Search Tree functions:test_search_null_tree:0: Passed
+test_hierarchy_tree.c:95:P:Binary Search Tree functions:test_search_null_key:0: Passed
+test_hierarchy_tree.c:104:P:Binary Search Tree functions:test_search_small_tree:0: Passed
+test_hierarchy_tree.c:114:P:Binary Search Tree functions:test_search_big_tree:0: Passed
+test_hierarchy_tree.c:123:P:Binary Search Tree functions:test_search_non_existing_key:0: Passed
+test_hierarchy_tree.c:37:P:Binary Search Tree functions:test_delete_leaf:0: Passed
+test_hierarchy_tree.c:37:P:Binary Search Tree functions:test_delete_middle:0: Passed
+test_hierarchy_tree.c:37:P:Binary Search Tree functions:test_delete_root:0: Passed
+test_hierarchy_tree.c:37:P:Binary Search Tree functions:test_delete_all:0: Passed
+Running suite hierarchy_tree
+test_hierarchy_tree.c:211:P:Hierarchy Tree functions:test_insert_with_parent:0: Passed
+test_hierarchy_tree.c:218:P:Hierarchy Tree functions:test_iterate_ancestors_null:0: Passed
+test_hierarchy_tree.c:227:P:Hierarchy Tree functions:test_iterate_ancestors_small_tree:0: Passed
+test_hierarchy_tree.c:245:P:Hierarchy Tree functions:test_iterate_ancestors_small_tree2:0: Passed
+test_hierarchy_tree.c:272:P:Hierarchy Tree functions:test_iterate_ancestors_big_tree:0: Passed
+test_hierarchy_tree.c:281:P:Hierarchy Tree functions:test_flatten_h_children_null:0: Passed
+test_hierarchy_tree.c:291:P:Hierarchy Tree functions:test_flatten_h_children_small_tree:0: Passed
+test_hierarchy_tree.c:311:P:Hierarchy Tree functions:test_flatten_h_children_small_tree2:0: Passed
+test_hierarchy_tree.c:337:P:Hierarchy Tree functions:test_flatten_h_children_big_tree:0: Passed
+test_hierarchy_tree.c:368:P:Hierarchy Tree functions:test_flatten_h_children_delete_middle:0: Passed
+test_hierarchy_tree.c:395:P:Hierarchy Tree functions:test_flatten_h_children_delete_last:0: Passed
+Results for all suites run:
+100%: Checks: 25, Failures: 0, Errors: 0
