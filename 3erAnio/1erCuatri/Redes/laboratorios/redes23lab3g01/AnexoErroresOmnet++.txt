@@ -1,0 +1,31 @@
+## Anexo : Errores en Omnet++
+
+Si bien Omnet++ se basa en C++ y muchos erroes son de este lenguaje, hay una familia de errores que ocurren mientras la simulación se ejecuta. Estos erroes tienen una enumeración en hexadecimal y pueden referirce a errores que tienen que ver con errores en el código o en el sistema operativo. Si bien estos errores no son de Omnet++ sino que están relacionados con el Sistema Operativo (o el entorno de ejecución) donde se ejecuta Omnet++. Cabe destacar que algunos errores, a pesar de ser distintos, tiene el mismo código de salida, por ejemplo 139 puede significar Segmentation Fault o Illegal Instruction.Algunos de los codigos que pudimos encontrar son los siguientes (Notar que los códigos están convertidos a decimal, es decir el error 139 se corresponde al 8b):
+
+**0: Success.** La simulación se completó sin errores.
+**1: General error.** Este código de error se suele usar para errores sin especificar durante la simulación.
+**2: Misuse of shell commands.** Indica que la simulación no fue ejecutada correctamente.
+**126: Permission denied.** Indica que el usuario no tiene privilegios para ejecutar la simulación.
+**127: Command not found.** El comando o el ejecutable para correr la simulación no fue encontrado en la ruta del sistema
+**134: Aborted.** Indica que la simulación fue terminada forzadamente. Puede ocurrir por una señal externa como SIABRT.
+**135: Bus error.** La simulación intenta acceder a una dirección de memoria invalido, alineado a un bus de hardware específico.
+**136: Floating-point exception.** 
+This code suggests that an arithmetic operation involving floating-point numbers produced an exceptional result, such as division by zero or an invalid floating-point operation.
+**137: Out of memory.**
+This error occurs when the simulation process exhausts the available memory. It often indicates a simulation design or configuration issue, such as allocating too much memory for a particular simulation run.
+**139: Segmentation fault. **
+This error occurs when the simulation process attempts to access memory that it is not allowed to access. It usually indicates a programming error, such as accessing a null pointer or an out-of-bounds memory region.
+**139: Illegal instruction.**
+This code is typically caused by a hardware or software error, such as executing an invalid or unsupported CPU instruction.
+**139: Killed.**
+This code indicates that the simulation process was terminated explicitly by an external entity, typically through a SIGKILL signal. It usually occurs when the process exceeds resource limits or if a user forcibly terminates it.
+**141: Pipe error.**
+This error occurs when a write operation is performed on a broken pipe or a pipe with no reader. It can happen when there is a communication failure between processes or when a process tries to write to a closed or non-existent pipe.
+**142: Alarm clock.**
+This code suggests that the simulation process was terminated by an alarm signal, typically triggered by a timer or a specific time condition. It often occurs when a process exceeds a predetermined time limit.
+**143: Termination by signal.**
+This code often indicates that the simulation process was terminated forcibly by an external signal, such as a SIGTERM or SIGINT signal.
+**255: Exit status out of range.**
+This code is used when the exit status of the simulation falls outside the valid range of 0-255.
+**255: Unknown error.**
+This code is often used when the reason for the simulation termination cannot be determined or is unknown.

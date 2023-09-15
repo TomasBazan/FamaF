@@ -1,0 +1,15 @@
+En el ámbito de las redes de computadoras, el control de flujo y el control de congestión son técnicas utilizadas para garantizar la transmisión efectiva de datos. Aunque ambos tienen el mismo objetivo general, existen algunas diferencias clave entre ellos.
+
+En el caso de estudio 1, el problema es de control de flujo. Esto ocurre cuando el host receptor tiene una capacidad de almacenamiento de paquetes pequeña en comparación con la capacidad de envío del productor. Como resultado, el host receptor pierde paquetes una vez que su buffer se llena y no puede almacenar nuevos paquetes entrantes, ni procesar los ya almacenados para liberar espacio en el buffer.
+
+Por otro lado, en el caso 2, el problema es de congestión. En este caso, el emisor tiene una alta capacidad para producir, pero la capacidad de carga de la subred no soporta este tráfico de datos. El nodo Queue no tiene la suficiente capacidad para almacenar y procesar los paquetes que NodeTx le manda, lo que lleva a la pérdida de paquetes.
+
+La Figura 6-22 de Tanenbaum presenta una representación de ambos problemas. En ella, el dibujo a) muestra el problema de flujo del caso 1, mientras que el dibujo b) representa el problema de congestión del caso 2. Podemos observar que aunque ambos problemas llevan a la pérdida de paquetes, la razón detrás de ello y, en algunos casos, la solución no son las mismas.
+
+En cuanto al control de flujo, existen dos tipos principales: el control de flujo basado en créditos y el control de flujo basado en retroalimentación. El control de flujo basado en créditos implica que el receptor envíe un mensaje al transmisor cuando esté listo para recibir más datos. El transmisor solo envía datos cuando recibe este mensaje. En el control de flujo basado en retroalimentación, el receptor envía un mensaje al transmisor indicando cuántos datos puede recibir en ese momento.
+
+Por otro lado, el control de congestión se utiliza para garantizar que la red no se sobrecargue y los datos se transmitan de manera efectiva incluso en momentos de alto tráfico. La congestión en la red puede ocurrir cuando hay demasiados datos que intentan pasar por la red al mismo tiempo. Cuando esto sucede, los paquetes de datos pueden perderse o retrasarse, lo que afecta negativamente la eficiencia y el rendimiento de la red.
+
+Las técnicas de control de congestión incluyen el control de congestión explícito e implícito. En el control de congestión explícito, el receptor envía un mensaje al transmisor indicando que la red está congestionada y que debe reducir la velocidad de envío de datos. En el control de congestión implícito, el transmisor monitorea la congestión en la red y ajusta su velocidad de envío de datos en consecuencia.
+
+Algunas de las técnicas utilizadas para el control de flujo y el control de congestión en las redes de computadoras incluyen el protocolo TCP, utilizado por la mayoría de las redes de Internet, y el protocolo UDP, utilizado en aplicaciones que requieren una transmisión de datos más rápida y sin garantía de entrega.

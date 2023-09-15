@@ -1,0 +1,67 @@
+file 64577 1686776831                                           
+version 3
+run General-0-20230614-18:05:51-10438
+attr configname General
+attr datetime 20230614-18:05:51
+attr datetimef 20230614-180551
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 10438
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Network
+config sim-time-limit 200s
+config Network.node[0].app.interArrivalTime exponential(1)
+config Network.node[0].app.packetByteSize 125000
+config Network.node[0].app.destination 5
+config Network.node[2].app.interArrivalTime exponential(1)
+config Network.node[2].app.packetByteSize 125000
+config Network.node[2].app.destination 5
+
+vector 0 Network.node[0].lnk[0] "Buffer Size" ETV
+vector 1 Network.node[1].lnk[0] "Buffer Size" ETV
+vector 2 Network.node[2].lnk[0] "Buffer Size" ETV
+vector 3 Network.node[3].lnk[0] "Buffer Size" ETV
+vector 4 Network.node[4].lnk[0] "Buffer Size" ETV
+vector 5 Network.node[5].lnk[0] "Buffer Size" ETV
+vector 6 Network.node[6].lnk[0] "Buffer Size" ETV
+vector 7 Network.node[7].lnk[0] "Buffer Size" ETV
+vector 8 Network.node[0].net Lnk_Selected ETV
+vector 9 Network.node[2].net Lnk_Selected ETV
+vector 10 Network.node[2].lnk[1] "Buffer Size" ETV
+vector 11 Network.node[7].net Lnk_Selected ETV
+vector 12 Network.node[3].net Lnk_Selected ETV
+vector 13 Network.node[3].lnk[1] "Buffer Size" ETV
+vector 14 Network.node[6].net Lnk_Selected ETV
+vector 15 Network.node[4].net Lnk_Selected ETV
+vector 16 Network.node[4].lnk[1] "Buffer Size" ETV
+vector 17 Network.node[5].net Hops ETV
+vector 18 Network.node[5].app Delay ETV
+0	1668 5719 1 3873 0 112.155390204255 238 0 9 1059 6599
+1	7387 223 2 289 0 0.0007 16 0 1 8 8
+2	7610 223 3 290 0 0.0007 16 0 1 8 8
+3	7833 223 4 291 0 0.0007 16 0 1 8 8
+4	8056 223 5 292 0 0.0007 16 0 1 8 8
+5	8279 223 6 293 0 0.0007 16 0 1 8 8
+6	8502 5545 7 3883 0 112.155590204255 230 0 1 115 115
+7	14047 5591 8 3878 0 112.155490204255 232 0 1 116 116
+8	19638 2789 322 3840 0.898560388484 110.893768419985 113 0 0 0 0
+9	22427 2643 329 3843 1.859604212075 110.988609037376 107 1 1 107 107
+10	25070 5388 330 3887 1.859604212075 112.399967332569 209 0 10 633 3405
+11	30458 2792 334 3876 1.898660388484 112.155490204255 108 0 0 0 0
+12	33250 2611 342 3890 2.859704212075 112.400067332569 101 1 1 101 101
+13	35861 5222 343 3892 2.859704212075 112.400067332569 202 0 1 101 101
+14	41083 2768 352 3881 2.898760388484 112.155590204255 107 0 0 0 0
+15	43851 2559 366 3867 3.859804212075 111.400167332569 99 1 1 99 99
+16	46410 5118 367 3869 3.859804212075 111.400167332569 198 0 1 99 99
+17	51528 5277 376 3885 3.898860388484 112.155690204255 204 3 3 612 1836
+18	56805 7771 377 3886 3.898860388484 112.155690204255 204 3.0003 11.965621533286 1339.392994139 10347.403316439
+

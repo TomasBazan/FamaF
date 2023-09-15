@@ -1,0 +1,45 @@
+2.1)
+valor
+tipo = caracter_alfabetico;
+variable = caracter_alfabetico, {caracter_alfabetico | digito };	#VER
+declaracion = tipo, variable;						#VER
+asignacion = variable , "=" , (numero | identificador | string);
+asignacion multiple = variable x[sub i}{i = digito}, "=" , (numero | variable | string)[sub i] {i = digito};
+
+2.2) Python no es un lenguaje independiente de contexto pura porque, de serlo no se deberia poder hacer multiple asignacion de variables. Pero si puede ser un lenguaje Independiente de contexto aumentada basandonos solo en este aspecto.
+
+2.3) Una gramatica es ambigüa cuando define a un objeto del lenguaje de varias maneras dependiendo del caso. Una variable puede ser string o puede ser digito. El problema de esto es que genera conflictos en la semántica, dos variables se pueden sumar o no dependiendo de la definicion de cada variable, por ejemplo: si definimos a dos variables como digitos, si se podrian sumar pero de tratarse de string no. 
+Para solucionar esto podemos definir las operaciones de manera ambigüa para que tengan el efecto deseado, ( y definir que no se puede?)
+2.4) a) Terminales: 	{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, +, -}
+	No Terminales: 	{ <d> , <n>, <e>}				# VER
+b) Expresiones validas : 
+543:
+				<n>
+			<n>		<d>
+		<n>	     <d>    	3
+	    <d>		      4
+	    5
+543+3:
+				<e>
+			<e>	+	<e>
+			<n>			<n>
+		<n>		<n>		<d>
+	<n>	<d>		<d>		3
+        <d>	4		3
+        5     
+543+3-12
+                                <e>
+                        <e>     +       <e>  		- 		<e>
+                        <n>                     <n>	      		<n>		
+                <n>             <n>             <d>		<n>		<d>
+        <n>     <d>             <d>             3	        <d>		2
+        <d>     4               3				1
+        5     
+
+c) No lo es ya que e no esta definido y A tampoco
+
+d)Si lo es por ejemplo 10 puede ser representado como un <e>-><n>-> <d> -> 1  <d> -> 0
+Pero tambien puede ser representado como <e> -> <n> -> <d> -> 5 + <e> -> <n> -> <d> -> 5  
+e) 											#VER
+
+

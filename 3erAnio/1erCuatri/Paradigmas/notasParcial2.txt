@@ -1,0 +1,6 @@
+Caracteristicas de lenguajes de scripting
+No es muy vervoso siempre funca
+Fijarse en las declaraciones de las variables
+Lenguaje de Alto nivel, ver que construcciones lingüisticas complejas tiene el código
+Acceso al Sistema Operativo, ver que sea facil relacionarse con el entorno, es decir que las acciones
+		de SO es facil y/o simple. La interaccion directa con el entorno sin usar monadas ni librerias

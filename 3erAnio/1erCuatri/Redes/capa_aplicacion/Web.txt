@@ -1,0 +1,64 @@
+Que es una pagina Web?:
+importante: tiene vinculos y enlaces a otras paginas web
+interface que se comunica con un servidor mediante un browser
+
+Tipos de paginas Web:
+ - Paginas estaticas: no cambian a menos que el creador la modifique
+ - Paginas dinamicas: Dependen de ciertos parametros (los cuales
+ 							no tengo control) 
+	Problemas: paginas clavadas por respuesta del servidor.
+Pedidos asincronicos: Pedidos al servidor y dejar al cliente libertad de navegacion
+ - Aplicaciones de paginas unicas: Una unica pagina que se comunica con el servidor el cual solo se encarga de mandar datos. La pagina los muestra en la pantalla. Lo que le quita carga al servidor y a la Red.
+ Interfaz de usuario mas rica en configuracion
+
+
+Como identifico a una Pagina Web?:
+ Con ip no alcanza
+ Con ip y una ruta(path) (ruta de folders que termina con nombre de archivos)
+ Si no me gusta un ip un nombre de dominio y una ruta
+ Tambien faltaria el puerto, pero este es fijo
+ Nombre del protocolo, name dominio, name del path para PAGINA ESTATICA
+ Para pagina dinamica faltaria darle argumentos ingresados en un formulario. el nombre del archivo es un scrip de app
+
+Los parametros son separados por &. Por ejemplo :
+https://famaf-nva.aulavirtual.unc.edu.ar/course/view.php?id=20&section=2#tabs-tree-start
+                                                        ^ ^    ^ 
+			        comienzo del query string |    |
+				                una variable   otra variable
+
+Cuando llega un documento al navegador web, como se sabe que tipo de documento se trata?
+ 
+
+Navegador web = browser
+ El browser entiendo algunos formatos
+ Como puede hacer el browser con un documento retornado	que no es uno de los tipos MIME soportados por el
+   Abrir otra aplicacion que si puediera. Una funcion que dado un formato te diga con que aplicacion 
+   puede mostrarlo.
+   Dos tipos:
+     Apps auxiliares: corren separado del navegador
+     Plug in: Plug in es una componente que corre dentro del browser
+
+Sevidores Web:
+ Que tipo de tareas gruesas hace un servidor web?:
+  Te responde la pagina web que le pidas.
+  Puede procesar comunicaciones GET y POST.
+  Borrar, almacenar, devolver paginas
+  Ejecutar paginas dinamicas.
+ Como podria estar organizado internamente un servidor web?
+  -Soportar concurrencia
+  -Memoria Disco para persistir las paginas
+  -Cache en el servidor para cargar las paginas mas frecuentadas para mas velocidad
+  Front end para recivir los pedidos y entregarlos a los modulos de procesamiento. Estos acceden a 
+  Cache o a disco.
+Sitio Web:
+ Conjunto de paginas.
+ permite a los usuarios crear informacion
+Aplicacion Web:
+ Interfaz mas sofisticada (mas interctiva)
+
+Protocolo para la web. Cosas a considerar:
+ Como se dan los argumentos de una pagina dinamica
+ Cuales son los comandos
+
+Que tipos de campos para una pagina
+Url (incluye path y nombre del archivo), (id no va), tipo de pedido (si es post o get), parametros (si es pagina dinamica ( va en la Url)), informacion de estado (supongamos un campo para esta informacion), parametros sobre como funciona la comunicacion(cerrar la conexion cada cierto tiempo), 

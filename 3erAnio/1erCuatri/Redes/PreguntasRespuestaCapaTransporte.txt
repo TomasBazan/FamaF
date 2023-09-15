@@ -1,0 +1,75 @@
+Intro
+
+Para que sirve?|| Provee comunicacion logica entre procesos que se ejecutan en diferentes sistemas finales. Mejora los servicios de Capa de Red
+Donde se ejecuta?|| Enteramente en los hosts o sistemas finales
+Que problemas soluciona la CT?|| La fiabilidad de la transmicion de paquetes. Direccionamiento de los destinos. Control de flujo y uso de buffers. Congestion de la red
+Con que metodos aborda el problema|| Usando temporizadores y retransmitiendo paquetes perdidos
+Que es un segmento? || Es la unidad de datos del protocolo de trasporte
+Que tipo de paquetes deben ser confirmados?|| los paquetes de datos y paquetes con informacion de control
+Como consigo que la entrega de segmentos sea ordenada?|| Numerando los segmentos con numeros de secuenciay usar un temporizador para cada segmento una vez que lo envio. Mandar confimaciones de recepcion (ACK). Retransmitir los segmentos si expira el temporizador sin recibir ACK. Los segmentos se re-ensamblan en orden
+De que tamaño son los segmentos de TCP?|| TCP (o ETCP) acepta flujos de datos que se dividen en segmentos de como mucho 64 KB, se envia c/segmento dentro de un datagrama IP
+Como se conforma un segmento TCP?|| Segmento = encabezado TCP ++ datos
+De que tamaño es el numero de secuencia de cada byte en un flujo de datos?|| 32 bits
+ *Que es MTU?* || La unidad maxima de transferencia, que delimita el tamaño maximo de un segmento 
+Quien se encarga de reordenar los datagramas si llegasen a llegar desordenados?|| TCP se encarga de reensamblar los mensajes en la secuencia correcta
+Cual es la funcionalidad del temporizador?|| Al enviar un segmento se incia el temporizador, si el temporizador termina y no se recibio una confirmacion de que el segmento haya llegado, se reenvia dicho segmento
+Cual es el tamaño del encabezado en TCP || Encabezado fijo en 20 bytes
+Hasta cuantas palabras de 32 b pueden tener un encabezado TCP|| Hasta 5 palabras de 32 b
+
+Direccionamiento
+
+Como puede saber que proceso servidor necesita el usuario || El usuario se consulta con con el Servidor de Directorios, el cual registra para c/ tipo de servicio que puertos de los servidores prestan ese servicio. Entonces el usuario se conecta con el servidor que desea
+Como hacer para que el proceso servidor atienda al cliente si no esta activo || Se usa un server que ejecuta los servidores inactivos (servidor de procesos). Este escucha un grupo de puertos esperando, cuando un cliente solicita un puerto el servidor de procesos genera el servidor solicitado heredando la conexion con el cliente
+Como evitar que se llene la memoria con servidores escuchando en TCP|| Hay un solo servidor (demonio) que escucha un conjunto de puerto llamado inetd.
+
+Transferencia de datos confiable
+
+Con que herramientas traba el Protocolo de Parada y Espera?|| Trabaja con num de secuencia en los paquetes, Acks y temporizadores para restransmitir paquetes
+Como es el comportamiento del emisor en este protcolo?|| Se envia un paquete y se espera el Ack hasta un cierto tiempo (controlado por el temporizador), si llega se repite lo anterior. De no llegar el Ack se retransmite el paquete y se repite este proceso.
+RTT|| tiempo de ida y vuelta de un bit
+En que se basan los protocolos de tuberia?|| El emisor envia multiples paquetes a ser confirmados. Se necesita bufers y un numero de secuencia mayor
+Que hace Retroceso N con los paquetes que llegaron luego de uno que se perdio?|| El receptor descarta todos los paquetes subsecuentes al paquete perdido, no envia acks para estos.
+Como se comporta el receptor en Retroceso N?|| Envia ack acumulativo. Cuando recibe un paquete chequea si esta en orden y no tiene errores. De ser asi manda ack y entrega parte de datos a la capa superior, sino descarta el paquete y manda un ack del paquete anterior.
+Como funciona el Ack acumulativo? || se envia un ack con un Numero de secuencia mas alto, tal que los numeros de secuencia anteriores fueron recibidos.
+Como se comporta el emisor en Retroceso N?|| Usa un solo temporizador para el paquete mas viejo no confirmado. Si el temporizador expira, retransmite todos los paquetes a partir del que expiro. Si llega un Ack y hay segmentos enviados no confirmados, se reinicia el temporizador. Si no hay segmentos sin confirmar, el temporizador se detiene.
+A que nos referimos cuando hablamos de ventana corrediza?|| Al intervalo de numeros de secuencia de los paquetes enviados y no confirmados + paquetes por enviar que pueden ser almacenados por el emisor en buffers
+Como sabe el receptor que numero de secuencia deberia ser el proximo en llegar?|| El receptor tiene una variable donde guarda el numero de secuencia mas chico que no llego (el proximo que necesito)
+Que es un ack duplicado?|| Los acks que manda el receptor correspondientes a los paquetes que llegaron luego de un paquete que no llego
+Cual es el principal problema de Retroceso N?|| El uso ineficiente del canal frente a segmentos perdidos o demorados.
+Que hace el protocolo de Repeticion Selectiva con los paquetes que llegan luego de uno que no?|| Estos paquetes se almacenan en un bufer, una vez recibido el paquete que faltaba se entrega a la capa superior todos los paquetes almacenados en el bufer en orden.
+Que es un NACK?|| Un Ack negativo, que indica que el paquete no ha sido recibido, o esta dañado
+Que se almacena en la ventana del emisor en Repeticion Selectiva?|| Paquetes enviados y confirmados. Paquetes Enviados y no confirmados. Paquetes listos para enviarse.
+Que se almacena en la ventada del receptor en Repeticion Selectiva|| Paquetes esperados y no recibidos. Paquetes recibidos fuera de orden. Paquetes aceptalbes en la ventana que no han llegado
+Hasta cuando se mantiene un paquete en el bufer del receptor?|| Hasta que los paquetes anteriores hayan sido enviados a la capa superior.
+Cual es el tamaño de la ventana emisora en RS?|| Comienza en 0 y tiene un MAX_SEQ
+Que se hace cuando llega un paquete?|| Se revisa el numero de secuencia para ver si cae dentro de la ventana. Si se cumple y no ha sido recibido se almacena.
+Como se comporta el emisor en Repitcion Selectiva?|| Si se puede enviar el prox. n° de secuencia y esta disponible, se almacena en el bufer y se envia. Si expira el temporizador para un paquete se reenvia y se reinicia el timer. Si se recibe ACK se marca el paquete como recibido. Se corre la venta al paquete que no fue confirmado 
+Como se comporta elreceptor en RS?|| Se envia ACKs para cada paquete recibido, si esta fuera de orden lo almaceno. Entrega los paquetes que esten en orden hasta el paquete que no ha recibido aun.
+Tamaño de ventana receptora || (MAX_SEQ+1)/2
+
+Control de Flujo
+
+Cual es el problema de control de flujo?|| Un host emisor rapido sobrecarga a un host receptor lento
+Por que la capa de transporte se encarga del control de flujo si la capa de enlace ya lo hace?|| Para poder manejar la perdida de segmentos y como procesar los segmentos siguientes.
+Que hace el host emisor para saber cuando puede mandar?|| Solicita espacio en bufer en el otro extremo.
+Que debe hacer el receptor si aumenta la cantidad de conexiones abiertas?|| Debe ajustar dinamicamente el espacio de sus bufers
+Como se comporta el emisor y receptor en este protocolo?|| El emisor conoce cuantos segmentos puede mandar, disminuye la cantidad que puede mandar c/vez que manda algun segmento. Cuando la asignacion de bufers llega a 0 el emisor se detiene
+Si se pierde la informacion de reserva de bufers, ocacionando deadlock. Que solucion puedo dar?|| Cada host envia periodicamente un segmento de control con el ack y estado de bufers de c/conexion
+Que diferencias hay entre el protocolo anterior y TCP?|| TCP es mas flexible sobre las confirmaciones, y envio de paquetes a capa superior( no inmediato). Los encabezados de los segmentos recibidos ocupan espacio y no se almacena en bufers. El emisor no solicita espacio de bufer
+Como maneja TCP los bufers|| Implementa un bufer de recepcion circular, donde no almacena los encabezados de los segmentos, solo los datos. El receptor indica al emisor cuantos bytes puede mandar(Tamaño de vnetana). Esto se indica en el campo del encabezado TCP 'tamaño de ventana'
+Como es el buffer en el emisor|| Tambien es un bufer circular, el tamaño de este depende de su bufer y el tamaño de ventana. La cantidad de bytes a enviar no debe superar el mínimo de ambos valores
+Como calculo el tamaño de la ventana del receptor?|| RcvBuffer - (LastByteRcvd - LastByteRead). Donde LasByteRcvd es el ultimo byte recibido por capa de aplicacion
+Como funciona el receptor en TCP?|| Si recibe bytes en orden los coloca en bufer de recepcion. Puede confirmar la recepcion y modificar el tamaño de la ventana del emisor.Si esta lleno avisa que no queda espacio. Cuando entrega a capa superior los datos del bufer, avisa al emisor que tiene esa cantidad para enviarComo se comporta el emisor|| Si el tamaño de la ventana es cero el emisor no envia datos. Sino los envia cumplientos que: LastByteSent - LasByteAcked =< tamaño de ventana
+Como maneja TCP la perdida de segmentos?|| el receptor solicita segmento/s específico/s mediante segmento especial llamado NAK. Tras recibir segmento faltante, envia una confirmación de recepción de todos los datos que tiene en búfer. Cuando el receptor nota una brecha entre el número de secuencia esperado y el número de secuencia del paquete recibido, el receptor envía un NAK en un campo de opciones
+Que otra sulicon hay para este problema?|| el receptor usa acks selectivos para avisar que piezas recibioSi la ventana es de tamaño 0. Puede enviar datos? || Si, puede enviar datos urgentes o un segmento de 1 B para que el receptor re-anunciae el siguiente byte esperado y el tam. de la ventana
+
+Control de Congestion
+Como lleva la cuenta TCP de cuantos datos puede enviar un host por la red|| TCP maneja una ventana para la congestion (VC), el tamaño es el numero de bytes que el emisor puede tener en la red en un momento dado
+En que se basa el algoritmo de arranque lento?|| El emisor asigna a la VC el segmento de tamaño maximo usado por la conexión y envia un STM (El emisor y el receptor se ponen de acuerdo en el tamaño de STM). Si se recibe un ack de este segmento antes que exipre el temporizador, el emisor agrega el equivalente en bytes de un semento a la VC para hacerla de 2 STM y los envia.Esto ocurre hasta un timeout, entonces se recorta la VC a la mitad.
+Que significa que recibir acks duplicados?||Los segmentos pueden tomar distintos caminos, y llegar fuera de orden, lo que dispara acks duplicados incluso cuando no se ha perdido ningún segmento. Si se pierde un segmento, habrá probablemente varios ack duplicados.
+Como lidia TCP con los acks duplicados?|| TCP asume que 3 acks duplacdos implican que el paquete se perdio, luego se retransmite el paquete antes que expire el temporizador.(Retransmision rapida)
+Que nuevas features utiliza el algoritmo de Talhoe?|| Usa un umbral además de las ventanas de recepción y congestión. Acks duplicados
+Algoritmo TCP Talhoe || Invariante: tam. ventana congestion =< tam. ventana receptor. Se usa arranque lento hasta alcanzar el humbral. Se incrementa hasta alcanzar timeout o 3 acks duplicados. Luego se fija el umbral a la mitad del tam. de la ventana de congestion. Se vuelve a ejecutar.
+Que aspecto de Talhoe mejora el algoritmo de TCP Reno || Evitar arranque lento cada vez que se llegue al limite
+Como funciona TCP Reno?|| Cuando se inicia la conexión se comienza con arranque lento. Luego la ventana de congestión crece linealmente hasta que se detecta 3 acks duplicados. Recuperacion rapida. Se reduce la ventana de congestion a la mitad. vuelve al segundo paso.
+De que trata la recuperacion rapida?|| Se manda un paquete por cada ack duplicado recibido. Un RTT luego de la retransmisión rápida el paquete perdido es confirmado. La recuperación rápida termina con esa confirmación de recepción.

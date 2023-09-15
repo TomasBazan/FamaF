@@ -1,0 +1,6 @@
+En java la seguridad se manjea de la sig. manera:
+- para codigo desconocido se corre en sandbox
+- Principalmente con firmas de autentificacion (manera social)
+
+
+

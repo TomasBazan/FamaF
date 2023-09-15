@@ -1,0 +1,186 @@
+lab viernes de 9 a 13
+
+clase 1 (14/3/23):
+
+Historia de los lenguajes de programacion
+
+clase 2 (21/3/23):
+
+maquina de turing : abstraccion de una computadora
+
+Cinta(pensar como array de memoria)
+En la maquina de turing la cinta es ilimitada 
+automata de estados finitos con esta cinta ilimitada (esto es lo que se puede expresar con un lenguaje de programacion)
+cabezal de lectura(recorre las celdas de memoria)
+un controlador de estado finito (prom counter)
+
+Semantica Operacional:
+Tiene el foco en las operacion (transformaciones que ocurren)
+secuencia de transiciones entre estados
+
+Los unicos que son persistentes son : 
+	Contador de programa
+	Puntero de entorno
+Las variables que no tengo en mi entorno me fijo en todo el entorno:
+esto es subir por la pila hasta encontrarlas
+
+Activation record:
+Cuando entro en un nuevo bloque se apila un activation record con 
+espacio para variables locales del bloque
+Tiene : 
+	-Variables locales
+	-Control link: puntero al que ha llamado al activation record
+	-Variables temporales y resultados intermedios 
+	(gralmente no son visibles para el programador)
+
+Importante: En el Activation Record no se guarda espacio para codigo
+no se va a ejecutar
+
+Para ser turing complete:
+Variables enteras, valores, operaciones, asignacion if y go to (control de flujo)
+  No necesario pero todos lo tienen: 
+    -Alcance lexico y bloques para tener variables con ref. locales
+    -Declaraciones y def de procedimientos y funciones
+
+Notacion:
+	L-valor : direccion de memoria
+	r-valor : ubicacion de memoria identificado por l-valor
+	identificador : nombre de la variable
+Flujo: 
+Secuencia de datos por la que va pasando la maquina
+	Programa estructurado:
+	Un programa en el cual el flujo de datos esta claro.
+	Si no esta estructurado es un spagetti code
+Alcance y lifetime:
+	Alcance : region del texto del programa donde una declaracion es visible
+	LifeTime: tiempo qen que una ubicacion de memoria es asignada a un programa.
+
+Abstraccion Procedural:
+	Procedimiento: alcance parametrizado con nombre, pueden ser funciones con retorno o no
+
+
+Argumentos y parametros:
+	Argumentos: expresion que aparece en la llamada de la funcion
+	Parametros: identificador que aparece en la declaracion de la funcion
+
+
+Clase 3:
+
+pasaje por valor-referencia: agarra el valor y lo pasa
+pasaje por nombre: en la funcion traducimos el identificador de los parametros 
+		por el identificador de los para metros
+		pasa el el l-valor(gral se usa para ir a la direccion de memoria)
+pasaje por valor-resultado: trata de tener la comuncacion con el exterior de valor-referencia
+			   pero solo sobre un solo canal de comunicacion (return)
+			   funciona por valor hasta la ultima parte, en esta funciona por referencia
+pasaje por necesidad: variacion de nombre, se guarda la evaluacion del parametro luego del primer uso.
+
+Paradigma funcional:
+
+funcional es Paradigma Declarativo: digo como son las cosas. (no qué hay que hacer)
+*dos familias de lenguajes: funcionales y logicos(cronoc)
+*en imperativo la asignacion es destructiva (destruye lo que ya tenia), no en funcional.
+
+Operaciones declarativas: declaro como son las cosas y despues uso la aritmetica con esas declaraciones
+	-es independiente solo depende de los argumentos
+	-sin estado (no recuerda ningun estado entre llamados)
+	-determinista (las llamadas con los mismos argumentos siempre dan los mismos resultados)
+Puedo crear programas declarativos por composicion de operaciones declarativas
+
+Ventajas:
+	-Mas facil razonar (derivacion de programas)
+	-Una componente declarativa se puede escribir, testear y verificar independientemente del resto
+	
+
+Clase 4:
+
+Bash es lenguaje dinamico y se resuelve en contexto de ejecucio
+Clausura: Asignacion de valor a variables que completa el significado de una funcion
+
+Agrego en el activation record el 'Acces link' para referenciar la clausura de la funcion 
+Esto es la referencia al contexto de las variables usadas por esta funcion
+
+--------------------------------------------------------------------------------------------------------
+Excepciones:
+
+Cuando ocurre recorremos la pila y vamos "destruyendo" cada parte mientras subimos
+Tienen dos partes: el que la manjea (exception handler) y el que captura (catch)
+El que levanta la excpecion
+
+se apila primero el catcher y luego la funcion (para que pueda agarrar la excepciovalores)
+Cuando ocurre una excepcion se comienza a desapilar hasta que encuentre un activation record
+especial (HANDLER)
+Por esto siempre tienen que tener alcance dinamico
+	(Se usa para pasar algo del entorno y que no este sujeto a las definiciones del entorno)
+Puedo tener try catch dentro de otros try catch
+Lo que tmb puedo hacer es manejar el error dentro de un catch y luego levantarla de nuevo
+
+
+--------------------------------------------------------------------------------------------------------
+Sistema de Tipado:
+
+Manera en la que interpretamos los datos
+Conjunto de valores
+
+Tipos:
+
+tipado estatico es en tiempo de compilacion y dinamico en tiempo de ejecucion
+tipado fuerte tiene muchas restricciones
+tipado debil son todas las demas, es decir que cada uno lo define como se le canta el culo
+
+Sobrecarga:
+Sobrecargar el operador hace que pueda funcionar con otros tipos. Ej: sumar numeros sumar strings
+Polimorfismo:
+Cuando hay una sola implementacion de la funcion pero puede tratar distintos tipos
+
+-------------------------------------------------------------------------------------------------------
+Ejercicios :
+
+6.7)
+def aniadir_a_lista_en_diccionario ( diccionario ,
+				    nombrelista , elemento ) :
+    if nombrelista in diccionario :
+        l = diccionario [ nombrelista ]
+        print ( " %s ya tiene %d elementos . " % ( nombrelista , len ( l ) ) )
+    else :
+        diccionario [ nombrelista ] = []
+        print ( " Creamos %s . " % nombrelista )
+    diccionario [ nombrelista ]. append ( elemento )
+    print ( " Aniadimos %s a %s . " % ( elemento , nombrelista ) )
+
+
+def aniadir_a_lista_en_diccionario ( diccionario ,
+				    nombrelista , elemento ) :
+    try:
+    	diccionario [nombrelista].append(elemento)
+    excpet(KeyError):
+	diccionario[nombrelista] = []
+	print("Creamos %s " %nombrelista)
+	diccionario [nombrelista].append(elemento)
+   finally:
+   	print("Aniadimos %s a %s. " %(elemento, nombrelista))
+
+6.1)
+exception Excpt of int ;
+
+fun twice (f,x) = f(f(x)) handle Excpt (x) = > x ;
+
+fun pred (x) = if x = 0 then raise Excpt (x) else x-1;
+
+fun dumb (x) = raise Excpt (x) ;
+
+fun smart (x) = 1 + pred (x) handle Excpt (x) = > 1;
+
+a) twice(pred,1)
+output: 0
+Se levanta la excepcion en la segunda llamada a pred y se maneja en twice. la excpecion es x
+b)twice(dumb,1)
+output: x
+Se levanta una excepcion en la primera llamada a dumb y se maneja en twice (dos veces?). Levanta la x
+c)twice(smart, 1)
+output: devuelve 1 y no hay excepciones
+
+4.1)
+Int -> Int -> Int
+
+
