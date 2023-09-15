@@ -1,0 +1,43 @@
+#Para este ejercicio se podrán utilizar SOLO las instrucciones LEGv8 soportadas en el procesador
+#implementado en HDL (LDUR, STUR, CBZ, ADD, SUB, AND, ORR).
+
+# 2-A) Con la menor cantidad de registros e instrucciones, inicializar con el valor
+#de su índice las primeras N posiciones de memoria (comenzando en la dirección “0”).
+
+# guardar el xzr en el primero e ir iterando
+
+// N = 10
+// x0,x1,x2 para calculos auxiliares
+// x0 para guardar el N que voy a decrementar
+// x1 para 
+// x2 para 
+
+ADD X30, XZR, XZR
+ADD X29, X10, XZR
+ADD X28, X1, XZR
+loop:
+	CBZ X29, end
+	SUB X29,X28
+	STUR X30 [X30, #0] 	
+	ADD X30 X30 X28
+	CBZ XZR, loop
+end
+
+#2-B) Realizar la sumatoria de las primeras N posiciones de memoria y guardar el resultado en 
+#la posición N+1.
+
+// N = 17
+
+ADD X18,XZR,XZR
+ADD X19,X18,XZR
+ADD X30, X1,XZR
+loop:
+	CBZ X19, end
+	SUB X19, X19, X30
+	ADD X18, X18, X19
+	CBZ XZR, loop
+end
+
+#2-C) Realizar la multiplicación de dos registros: X16 y X17 y guardar el resultado en la posición
+# “0” de la memoria.
+

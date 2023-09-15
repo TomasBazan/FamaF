@@ -1,0 +1,167 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tomas/quartusProjects/Practico1/simulation/modelsim
+vadder
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1694089644
+!i10b 1
+!s100 a3zDN1NYD4EHE0kQDg6Iz2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I=6^6HQ40g7OS=N:;g]?<>2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1692920353
+8/home/tomas/quartusProjects/Practico1/adder.sv
+F/home/tomas/quartusProjects/Practico1/adder.sv
+!i122 2
+L0 3 7
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1694089644.000000
+!s107 /home/tomas/quartusProjects/Practico1/adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/tomas/quartusProjects/Practico1|/home/tomas/quartusProjects/Practico1/adder.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+/home/tomas/quartusProjects/Practico1
+Z9 tCvgOpt 0
+valu
+R1
+Z10 !s110 1694089645
+!i10b 1
+!s100 Le<Y9f`3XhZgDKPEHaWPa2
+R3
+IJSG_91;YL@:3;EERhZ7U81
+R4
+S1
+R0
+w1693928717
+8/home/tomas/quartusProjects/Practico1/alu.sv
+F/home/tomas/quartusProjects/Practico1/alu.sv
+!i122 3
+L0 1 18
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/tomas/quartusProjects/Practico1/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/tomas/quartusProjects/Practico1|/home/tomas/quartusProjects/Practico1/alu.sv|
+!i113 1
+R7
+R8
+R9
+vexecute
+R1
+R10
+!i10b 1
+!s100 82PlTl;Nb@CXSn8o0FX?E0
+R3
+I0GYbAz1aDofEg6MFZe@kH2
+R4
+S1
+R0
+w1694042567
+8/home/tomas/quartusProjects/Practico1/execute.sv
+F/home/tomas/quartusProjects/Practico1/execute.sv
+!i122 4
+L0 1 17
+R5
+r1
+!s85 0
+31
+Z11 !s108 1694089645.000000
+!s107 /home/tomas/quartusProjects/Practico1/execute.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/tomas/quartusProjects/Practico1|/home/tomas/quartusProjects/Practico1/execute.sv|
+!i113 1
+R7
+R8
+R9
+vexecute_tb
+R1
+R10
+!i10b 1
+!s100 i8?2lcV5cj4cS:J4c:n;G3
+R3
+I4L[iTmR`;N_233ENG?4YK1
+R4
+S1
+R0
+w1694043105
+8/home/tomas/quartusProjects/Practico1/execute_tb.sv
+F/home/tomas/quartusProjects/Practico1/execute_tb.sv
+!i122 5
+L0 2 30
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/tomas/quartusProjects/Practico1/execute_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/tomas/quartusProjects/Practico1|/home/tomas/quartusProjects/Practico1/execute_tb.sv|
+!i113 1
+R7
+R8
+R9
+vmux2
+R1
+R2
+!i10b 1
+!s100 XfdfLdSb9dmK[VUYkeA:Q1
+R3
+IdH9gVR`Z:Z?5n6:^Y_FLf0
+R4
+S1
+R0
+w1692918582
+8/home/tomas/quartusProjects/Practico1/mux2.sv
+F/home/tomas/quartusProjects/Practico1/mux2.sv
+!i122 1
+L0 3 8
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/tomas/quartusProjects/Practico1/mux2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/tomas/quartusProjects/Practico1|/home/tomas/quartusProjects/Practico1/mux2.sv|
+!i113 1
+R7
+R8
+R9
+vsl2
+R1
+R2
+!i10b 1
+!s100 `c@h0_TfTnn`3CajieZiC2
+R3
+IG?=]Q0X=>4:04:oe2>C;n2
+R4
+S1
+R0
+w1692918583
+8/home/tomas/quartusProjects/Practico1/sl2.sv
+F/home/tomas/quartusProjects/Practico1/sl2.sv
+!i122 0
+L0 3 9
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/tomas/quartusProjects/Practico1/sl2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/tomas/quartusProjects/Practico1|/home/tomas/quartusProjects/Practico1/sl2.sv|
+!i113 1
+R7
+R8
+R9

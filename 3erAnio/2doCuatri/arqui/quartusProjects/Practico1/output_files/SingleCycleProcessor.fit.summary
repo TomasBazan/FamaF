@@ -1,0 +1,10 @@
+I/O Assignment Analysis Status : Successful - Wed Sep  6 18:23:06 2023
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : SingleCycleProcessor
+Top-level Entity Name : mux2
+Family : Cyclone IV E
+Device : EP4CE15F23C6
+Timing Models : Final
+Total pins : 193 / 344 ( 56 % )
+Total virtual pins : 0
+Total PLLs : 0 / 4 ( 0 % )

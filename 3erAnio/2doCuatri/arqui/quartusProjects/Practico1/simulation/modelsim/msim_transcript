@@ -1,0 +1,95 @@
+# do SingleCycleProcessor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/tomas/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/tomas/quartusProjects/Practico1 {/home/tomas/quartusProjects/Practico1/sl2.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:27:24 on Sep 07,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/tomas/quartusProjects/Practico1" /home/tomas/quartusProjects/Practico1/sl2.sv 
+# -- Compiling module sl2
+# 
+# Top level modules:
+# 	sl2
+# End time: 09:27:24 on Sep 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/tomas/quartusProjects/Practico1 {/home/tomas/quartusProjects/Practico1/mux2.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:27:24 on Sep 07,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/tomas/quartusProjects/Practico1" /home/tomas/quartusProjects/Practico1/mux2.sv 
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 09:27:24 on Sep 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/tomas/quartusProjects/Practico1 {/home/tomas/quartusProjects/Practico1/adder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:27:24 on Sep 07,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/tomas/quartusProjects/Practico1" /home/tomas/quartusProjects/Practico1/adder.sv 
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# End time: 09:27:24 on Sep 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/tomas/quartusProjects/Practico1 {/home/tomas/quartusProjects/Practico1/alu.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:27:24 on Sep 07,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/tomas/quartusProjects/Practico1" /home/tomas/quartusProjects/Practico1/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 09:27:24 on Sep 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/tomas/quartusProjects/Practico1 {/home/tomas/quartusProjects/Practico1/execute.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:27:25 on Sep 07,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/tomas/quartusProjects/Practico1" /home/tomas/quartusProjects/Practico1/execute.sv 
+# -- Compiling module execute
+# 
+# Top level modules:
+# 	execute
+# End time: 09:27:25 on Sep 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+/home/tomas/quartusProjects/Practico1 {/home/tomas/quartusProjects/Practico1/execute_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:27:25 on Sep 07,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/tomas/quartusProjects/Practico1" /home/tomas/quartusProjects/Practico1/execute_tb.sv 
+# -- Compiling module execute_tb
+# 
+# Top level modules:
+# 	execute_tb
+# End time: 09:27:25 on Sep 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  execute_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" execute_tb 
+# Start time: 09:27:25 on Sep 07,2023
+# Loading sv_std.std
+# Loading work.execute_tb
+# Loading work.execute
+# Loading work.adder
+# Loading work.alu
+# Loading work.mux2
+# Loading work.sl2
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : /home/tomas/quartusProjects/Practico1/execute_tb.sv(20)
+#    Time: 10 ns  Iteration: 0  Instance: /execute_tb
+# Break in Module execute_tb at /home/tomas/quartusProjects/Practico1/execute_tb.sv line 20
+# End time: 09:40:17 on Sep 07,2023, Elapsed time: 0:12:52
+# Errors: 0, Warnings: 0

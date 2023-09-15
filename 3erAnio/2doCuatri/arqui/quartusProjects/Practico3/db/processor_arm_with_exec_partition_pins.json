@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ExtIAck",
+					"strict" : false
+				},
+				{
+					"name" : "ExtIRQ",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
