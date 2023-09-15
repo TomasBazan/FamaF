@@ -1,0 +1,14 @@
+Unica responsabilidad:
+	Pensar cuales son las posibles razones para que una CLASE cambie
+	las razones que pueden cambiar deberian ir en una clase nueva
+	EJ: sistema satelital con coordenadas x e y. Pueden cambiar a
+	coordenadas radiales, entonces las coordenadas deberia ser clase nueva
+ORM (Object Relation Mapped):
+	La bases de datos relacionales no suelen estar orientadas objetos
+
+Para el diagrama se piensa en que datos debo guardar
+	Ej; en un gmail no deberia guardar casilla ya que no quiero guardar nada	de tipo casilla, lo que quiero es guardar los mensajes con una cierta	
+	etiqueta.
+En una clase solo van los metodos que lo modifican a esa misma clase
+	Ej: send() no afecta a usuario sino a el mail
+

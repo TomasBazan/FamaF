@@ -1,0 +1,25 @@
+Intro:
+Desarrollo y mantenimiento
+Hacer codigo entendible 
+Solidez industrial
+
+Agenda:
+
+Deadline: 2/9
+Parciales: 28/9   y  11/9
+
+Regularidad: 	2 proyectos probados (Asistencia 70%)
+		Ambos parciales aprobados con 4 (60%)
+
+Promocion: Aprobar todas las evaluaciones con nota no menor a 6(73%) y promedio no menor a 7 (80%)
+Aprobar proyectos
+Aprobar coloquio
+Laboratorios: 
+Take home: Personal, largo
+
+
+Grande:
+2 entregas parciales y 1 entrega final(%70). Reuniones y dayly
+Se evalua el proceso
+Libro: Pankaj Jalote: "An Integrated Approach to Sooftware Engineering" 3ra ed. Springer
+

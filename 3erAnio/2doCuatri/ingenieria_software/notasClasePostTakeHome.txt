@@ -1,0 +1,53 @@
+CAPITULO 6 y 7
+
+Principio abierto-cerrado:
+	abierto a extension
+	cerrado a modificacion: si quiero cambiar una feature no debo necesitar modificar lo ya echo
+							sino agregar cosas
+Principio de sustitucion:
+	Un programa que utiliza un objeto O con clase C deberia permanecer inalterdado si O se 
+	reemplaza por cualquier objeto de una subclase de C
+
+Metodologia de disegno
+	Metodologia OMT(Object Modeling Technique): similar a la de objetos
+		1. Producir el diagrama de clases
+		2. Producir el modelo dinamico y usarlo para definir operacion de las clases
+			- Aca importa la temporalidad.
+			- Revisa como funciona el diagrama de clases choto de 1
+		3. Producir el modelo funcional y usarlo para definir operacion de las clases:
+			- especifica como computar los valores de salida a partir de los valores de la entrada
+			- Deben aparaecer en alguna clase como una sola operacion, oo como multiples operaciones
+			en varias clases
+		4. Definir las clases y operaciones internas
+			- Revisa el diagrama de clase en base a los modelos funcional y de clase
+		5. Optimizar
+			- Agregar asociaciones redundantes para optimizar acceso a datos. (Hay riesgo de
+			  generar acoplamiento)
+			- Usar tipos genericos
+			- Ajustar la herencia
+			- Guardar atributos derivados
+Metricas:
+	Metricas pasados por clase WMC
+		La complejidad de la clase depende de la cantidad de metodos en la misma y su complejidad.
+		WMV = sum(Clase(Metodo_i))
+	Profundidad del arbol de herencia (DIT)
+		Una clase muy por debajo en la jerarquia de clases puede heredar muchos metods
+
+		DIT de Clase C es la profundidad desde la raiz o longitud del camino de la raiz a clase C
+		Si hay herencia multiple elijo el camino mas largo
+	Cantidad de hijos (NOC)
+		Cantidad de subclases inmediatas de C
+		NOC =>  mayor reuso
+	Acoplamiento entree las clases (CBC)
+		Cantidad de clases a las cuales esta clase esta acoplada
+		menor acomplamiento => mayor independencia de la clase => mas facilmente modificable
+		a mayor CBC => 	mayor probabilidad de error en esa clase
+	Respuestas para una clase (RFC)
+		Captura el grado de conexion de los metodos de una clase con otras clases
+		
+		RFC de una clase C es la cantidad de metodos que pueden ser invocados como respuesta
+		de un mensaje recibido por un objeto de la clase C
+		
+		Cantidad de metodos de C + metodos de otras clases que reciben un mensaje de un metodo de C
+		
+

@@ -1,0 +1,52 @@
+Correlacion entre diagramas
+
+Alcance
+Aproximadamente 1 carilla
+De lo gral a lo especifico
+Alcance se puede usar en items
+
+DFD y Diagrama de clases son de TODO EL PROYECTO
+Casos de uso de lo especificado
+Crear partida, turno completo, jugar una carta de sospecha
+
+recomendaciones:
+
+actores y precondiciones: la precondicion no es el actor, las precondiciones se apilan
+esta mal hablar de la interfaz (ej: hace click en el menu, etc)
+Es raro que un actor principal sea de el sistema
+
+Sistema web 
+Tiene usuarios que se registren
+Se elige la partida y la partida es multijugador
+
+
+
+
+
+COMO SE JUEGA
+c/ jugador empieza y mantiene 4 cartas
+cuando se alza una carta se descarta otra
+4 a 12 jugadores en ronda
+la carta especial de la cosa se reparte al comienzo y siempre va a ser la cosa
+Los HUMANOS quieren eliminar a la cosa
+LA COSA quiere infectar a los demas jugadores O MATAR
+	para infectar a otro jugador hay una carta especial
+		El INFECTADO juega ahora para el equipo de LA COSA
+		EL INFECTADO no puede descartar la carta de infectado
+se juega por turnos en orden
+cartas de efecto (cambiar el orden, cambiar el sentido,)
+Una carta para matar a otro jugador y otra para evitar que te maten
+
+Las de DEFENSA se juegan fuera de turno, las de ACCION en mi turno
+HAY COMUNICACION: mediante chat
+TURNO (individual):
+1) tomar carta
+	puedo guardarmela o tener q jugarla inmediatamente
+2) jugar carta
+	se puede jugar (y mostrar la carta) o descartar (y no mostrar) una carta
+3) Intercambiar
+	c/jugador intercambia una carta con el que le sigue
+EL JUEGO TERMINA : cuando se mata a la cosa o se infecta a todos(o los matan)
+SI ALZAS CARTA INFECTADO SIENDO HUMANO: se puede descartar
+CARTA INFECTADO: se puede intercambiar si se alza una nueva con la cosa
+	solo se puede intercambiar a humano si sos la cosa

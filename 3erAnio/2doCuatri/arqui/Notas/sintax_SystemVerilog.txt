@@ -1,0 +1,85 @@
+System Verilog:
+
+Precedencia de mas alta a mas baja:
+Not ~
+Mult,div,mod *, / , %
+plus,minus + , -
+logical left, right shift <<. >>
+artihmetic left/ right shift  <<<. >>>  shift signados(manteniendo el signo)
+Relative Comparision  <.<=,>,>=
+Equality Comparison == , !=
+And &
+Xor ^
+Or  |
+Conditional ?:
+
+==============================================================================================
+Siempre mantener la notacion [3:0] para que la correspondencia de posiciones sea a3, a2,a1,a0
+
+logic describe conexiones internas
+
+input logic [3:0] d0, d1, d2,d3 ,..... <-- indica que hay 4 multiplexores en paralelo que forman uno de 2 a 1 (ESTO SOLO SI LO PENSAMOS COMO BUSES, que no es del todo correcto)
+
+&a <-- and de una variable(vector) es el and entre todos sus posiciones
+
+***********************************************************************
+Format : N'Bvalue
+
+
+N = number of bits, B=base
+'b binary, 'o octal, 'd decimal 'h hexadecimal
+default is decimal
+'0 ó '1 llega el bus con ceros o unos
+x: indica un nivel logico invalido (UTIL PARA ERRORES DE LOGICA)
+8'b1010_1111  <-- EVITA EL _ UTIL PARA VISUALIZAR
+Concat:  {esto, con esto, {num_tantas veces{esto}}
+
+***********************************************************************
+
+Adentro del always si es secuencial, pero no se ejecuta en ningun lado ya que el tiempo est[a detenido, solo se observa el resultado
+
+Cuando definis estructuralmente se puede usar compuertas not ya implementadas y lo que se indica es el "cable" del output
+
+tristate  <--- exportar salidas
+
+module mux2_8 	(input logic [7:0] d0,d1,
+		input logic    s,
+		output logic [7:0] y);
+	^
+	|
+	Esto es que entran dos buses de 8 y sale un bus de 8 por "y"
+
+assing y = .....   <-- desquibre logica combinacion, variable basica.
+
+always_ff @(posedge clk)   	<---  Sensible al evento posedge clk, esta sensando el clock y cuando 
+	q <=d;			<---  hay un evento positivo de clk, se detiene el tiempo y se ejecuta 
+				<---  la sentencia
+
+q<= 4'b0    <--- le manda 4 bits en cero a "q"
+
+en <---- enable: dice cual de todo el circuito esta habilitado
+
+latch 				<--  
+always_latch			<--Si en el fliflop cuando ocurre clk se modifica "d", "q" se ve afectado
+	if (clk) q <= d;	<--Con latch no ya que es en la bajada de la segnal
+
+COMBINACIONAL: en gral usar blocking assignment es decir el =
+SECUENCIAL: en gral usar nonblocking assigment es decir el <=
+
+module mux2
+	# (parameter ~nameOfTheVariable = ~value)
+		(input logic [width-1:0] d0,d1,
+		...
+
+default (sin especificar):
+	mux2 myMux(d0,d1,s,out);
+sino
+	mux2 myMux #(12) lowMux (d0,d1,s,out);
+
+ARRAYS:
+
+<data_type> <vecotr_size> <array_name> <arrya_dimensions>
+Ej:
+logic [7:0] table [3:0];
+Se usa el no empaquetado ya que si fuese empaquetado para cada posicion deberia traer todo el array completo
+

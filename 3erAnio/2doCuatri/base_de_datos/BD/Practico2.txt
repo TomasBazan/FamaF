@@ -1,0 +1,49 @@
+CREATE TABLE country(
+Code char(3) PRIMARY KEY,
+Name varchar(50),
+Continent varchar (50),
+Region varchar (25),
+SurfaceArea float,
+IndepYear int,
+Population int,
+LifeExpectancy float,
+GNP float,
+GNPOld float,
+LocalName varchar(30),
+GovernmentForm varchar(70),
+HeadOfState varchar(50),
+Capital int,
+Code2 char (2));
+
+CREATE TABLE city(
+ID INT PRIMARY KEY		,
+Name varchar(20),
+CountryCode CHAR(3),
+District Varchar(50),
+Population INT,
+FOREIGN KEY (CountryCode) REFERENCES country(Code)
+);
+
+CREATE TABLE countrylanguage(
+CountryCode CHAR(3),
+Lenguage VARCHAR(40),
+IsOfficial char(1),
+Percentage FLOAT,
+FOREIGN KEY(CountryCode) REFERENCES country(Code)
+);
+
+CREATE TABLE Continent(
+Name VARCHAR(40) PRIMARY KEY,
+Area INT,
+PercentTotalMass FLOAT,
+MostPopulousCity INT UNIQUE,
+FOREIGN KEY(MostPopulousCity) REFERENCES city(ID)
+);
+
+## Puedo agregar una CONSTRAINT a la columna 'Name' de 'city' para que sea UNIQUE y ahi podria 
+## usarla para como target de la FK en 'Continent'. 
+## PREGUNTA : esto es estandar? mala practica? una kk?
+## RESPUESTA : para este caso sirve, ver en zulio no me acuerdo bien xd
+
+INSERT INTO Continent()
+VALUES ()

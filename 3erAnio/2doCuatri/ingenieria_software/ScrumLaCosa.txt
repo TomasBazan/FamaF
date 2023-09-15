@@ -1,0 +1,54 @@
+
+3 sprints, por cada sprint 2 profes. los profes son los clientes
+daily por clase
+
+
+30 min por daily:
+	Hay lista de requerimientos por sprint
+		pueden ser carryover o volver a reevaluar
+
+Rotacion de scrum master y product owner
+
+Loom: graba pantalla mientras graba la camara
+
+Preparacion de Demo:
+	c/grupo viene al dia de la demo lista grabada usando loom
+	2 personas asignadas para cada demo
+	10 minutos max
+	si no se presenta la demo esta desaprobado
+Demo:
+	que se trabajo y que se logro entregar
+	que no se pudo implementar y PORQUE
+	se muestra lo que se trabajo andando
+	La importancia es entender y defender porque no se llego a lo que no se llego
+
+Responsabilidades del Scrum Master:
+	Descomposicion de los ticket para el dia de planing
+	daily (definido por el grupo)
+	preparacion de Demo
+Responsabilidades del Product Owner:
+	asdfsda
+
+Jueves 14 
+	CONSOLIDAR TAKE HOME
+	canal privado zulip e invitar a los profes asignados
+	1 organizacion de github
+	1 descomposicion en tareas de las especificacions dadas por los profes
+		
+	1 proyecto en JIRA
+	1 Scrum y un Product Owner
+	
+Requerimentos para primer Sprint:
+	generacion de voilerplate para fastAPI
+	generacion de voilerplate para React
+
+	Crear partida
+	agregar jugador a partida
+	crear mazo
+	repartir cartas
+	jugar carta: no hace nada la carta
+	robar carta
+	terminar turno
+	finalizacion de juego
+	carta lanzallamas
+	otros

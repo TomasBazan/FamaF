@@ -1,0 +1,8 @@
+La idea de los pipe es que en hay un clock grande que esta subdividido en 5 clocks. Creo que de ahi deriva la nocion de instrucciones paralelo
+
+los registros estan echos para q sea la unidad minima de medida
+luego tenemos las caches
+
+El camino critico es el largo de la instruccion mas larga
+	instruction memory -> register file -> ALU -> data memory -> register file
+
