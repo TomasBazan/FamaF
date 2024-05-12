@@ -57,7 +57,6 @@ def main():
     print('Aceptacion y rechazo')
     tiempo = time()
     for _ in range(Nsim):
-        # print(aceptacion_y_rechazo())
         aceptacion_y_rechazo()
     tiempo = time() - tiempo
     print(f'tardo {tiempo}')
@@ -65,7 +64,6 @@ def main():
     print('Transformada inversa')
     tiempo = time()
     for _ in range(Nsim):
-        # print(transformada_inversa())
         transformada_inversa()
     tiempo = time() - tiempo
     print(f'tardo {tiempo}')
@@ -73,7 +71,6 @@ def main():
     print('Urna')
     tiempo = time()
     for _ in range(Nsim):
-        # print(urna())
         urna()
     tiempo = time() - tiempo
     print(f'tardo {tiempo}')
