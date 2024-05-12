@@ -115,7 +115,6 @@ INNER JOIN city as ci ON ci.CountryCode = c.Code
 GROUP BY c.Name;
 -- Listar aquellos países y sus lenguajes no oficiales cuyo porcentaje de hablantes sea
 -- mayor al promedio de hablantes de los lenguajes oficiales.
-
 SELECT c.Name, cl.Language, cl.Percentage 
 FROM country as c
 INNER JOIN countrylanguage as cl ON cl.CountryCode = c.Code
@@ -123,14 +122,35 @@ WHERE cl.IsOfficial = 'F' AND cl.Percentage > (
   SELECT AVG(cl.Percentage) AS avg_Percentage
   FROM countrylanguage as cl 
   WHERE cl.IsOfficial = 'T' AND cl.CountryCode = c.Code
-)
+);
+
 -- Listar la cantidad de habitantes por continente ordenado en forma descendente.
+SELECT sum(c.Population) as poblacion, c.Continent as continente
+FROM country as c
+GROUP BY continente
+ORDER BY poblacion DESC;
 
 -- Listar el promedio de esperanza de vida (LifeExpectancy) por continente con una
 -- esperanza de vida entre 40 y 70 años.
+SELECT avg(c.LifeExpectancy) as esperanzaDeVida, c.Continent as continente
+FROM country as c
+WHERE c.LifeExpectancy > 40 AND c.LifeExpectancy < 70
+GROUP BY continente;
+
+SELECT avg(c.LifeExpectancy) as esperanzaDeVida, c.Continent as continente
+FROM (
+  SELECT LifeExpectancy, Continent
+  FROM country
+  WHERE LifeExpectancy > 40 AND LifeExpectancy < 70
+) as c
+GROUP BY continente;
 
 -- Listar la cantidad máxima, mínima, promedio y suma de habitantes por continente.
-
+SELECT c.Continent as continente, max(c.Population) as maximaCantHabitantes,
+min(c.Population) as minimaCantHabitantes, avg(c.Population) as promedioHabitantes,
+sum(c.Population) as totalHabitantes
+FROM country as c
+GROUP BY continente;
 
 -- Parte II - Preguntas
 
