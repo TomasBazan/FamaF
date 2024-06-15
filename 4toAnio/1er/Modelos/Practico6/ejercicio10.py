@@ -2,6 +2,9 @@ from random import random
 from scipy.stats import uniform, chi2, binom, expon
 import numpy as np
 
+# Ejercicio 10. Calcular una aproximación del p−valor de la hipótesis: “Los siguientes 13 valores provienen
+# de una distribución exponencial con media 50,0”:
+# 86.0, 133.0, 75.0, 22.0, 11.0, 144.0, 78.0, 122.0, 8.0, 146.0, 33.0, 41.0, 99.0
 
 def estimacion_pvalor(n, Nsim, d_KS):
     # n tam de cada muestra, d_KS estadistico
@@ -20,19 +23,22 @@ def estimacion_pvalor(n, Nsim, d_KS):
 def acumulada_binomial(muestra, fun_acumulada):
     acumulada = []
     for i in muestra:
-        acumulada.append(fun_acumulada(i)) 
+        acumulada.append(fun_acumulada(i, scale = 50)) 
     return acumulada
 
-
 def Estadistico(muestra):
-    acumulada_muestral = acumulada_binomial(muestra, uniform.cdf)
+    acumulada_muestral = acumulada_binomial(muestra, expon.cdf) # uso cdf porque es la acumulada
     n = len(acumulada_muestral)
     maximos = []
     for i in range(1,n+1):
         maximos.append(max (((i)/n) - acumulada_muestral[i-1] , acumulada_muestral[i-1] - ((i-1)/n)))
     return max(maximos)
 
-muestra = [0.12, 0.18, 0.06, 0.33, 0.72, 0.83, 0.36, 0.27, 0.77, 0.74]
-muestra.sort()
-estadistico_muestral = Estadistico(muestra)
-estimacion_pvalor(len(muestra), 10_000, estadistico_muestral)
+def main():
+    muestra = [86.0, 133.0, 75.0, 22.0, 11.0, 144.0, 78.0, 122.0, 8.0, 146.0, 33.0, 41.0, 99.0]
+    muestra.sort()
+    estadistico_muestral = Estadistico(muestra)
+    estimacion_pvalor(len(muestra), 10_000, estadistico_muestral)
+
+if __name__ == "__main__":
+    main()
