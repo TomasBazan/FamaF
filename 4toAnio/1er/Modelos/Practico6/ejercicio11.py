@@ -31,6 +31,7 @@ import numpy as np
 
 
 def Estadistico(N, p, k, n):
+    # N es el array de frecuencias, p es el array de probabilidades, k es la cantidad de valores considerados, n es la cantidad de experimentos
     T = 0.0
     for i in range(k):
         T += ((N[i] - n * p[i]) ** 2) / (n * p[i])
