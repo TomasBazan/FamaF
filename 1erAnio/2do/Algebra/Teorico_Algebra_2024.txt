@@ -1,0 +1,46 @@
+Esta es la lista de definiciones, propiedades, proposiciones, teoremas, etc. que se podrían tomar en el examen final. 
+
+La numeración de los resultados hace referencia a las notas de clase publicadas en el Classroom de la materia (versión 2024). 
+
+x para ya escrito en obsidian la demostracion/definicion/propiedad
+o si falta algo de checkear pero esta vista
+
+[x] 1. Propiedades P1-P4 del producto escalar (demostración).
+[x] Resultado de la norma de una constante por un vector (proposición 1.3.1, demostración).
+[x] Definición de distancia entre dos vectores (definición 1.3.2).
+[x] Desigualdad triangular (proposición 1.3.3, enunciado y demostración).
+[x] 2. Definición de operaciones elementales por fila (definición 2.3.2).
+[o] Definición de matrices equivalentes por fila (definición 2.3.4)
+[] Definición de matriz reducida por filas (MRF) y matriz escalón reducida por filas (MERF) (definición 2.4.1). 
+[] 3. Definición de matriz elemental (definición 3.3.1).
+[] Definición de matriz inversa (definición 3.4.1). 
+[] A, B, C matrices n x n tales que BA = Id y AC = Id,  entonces B = C (proposición 3.4.2(1), demostración).
+[] Unicidad de la matriz inversa (proposición 3.4.2(2), enunciado y demostración).
+[] A matriz n x n. A invertible, entonces A^{-1} (la inversa de A) es invertible (teorema 3.4.4(1), demostración).
+[] A, B matrices n x n invertibles, entonces la inversa de AB es B^{-1}A^{-1} (teorema 3.4.4(2), demostración).
+[] A matriz n x n invertible, entonces el sistema AX = Y tiene una única solución ((i) implica (ii) del teorema 3.4.9, demostración).
+[] Cálculo del determinante de una matriz triangular (proposición 3.5.3, enunciado).
+[] Sea A matriz n x n. Si A tiene dos filas iguales o una fila nula, det(A) = 0 (corolario 3.5.8, demostración).
+[] Si A matriz n x n invertible,  entonces det(A^{-1}) deta(A)^{-1} (corolario  3.5.10(1),  demostración).
+[] Sean A, B matrices n x n, entonces det(AB) = det(BA) (corolario  3.5.10(2), demostración).
+[] 4. Sea V espacio vectorial, t escalar y v en V, entonces, 1) t.0 = 0, 2) 0.v = 0, 3) si v no es nulo y t.v = 0, entonces t = 0, 4) (−1).v = -v (proposición 4.1.2, demostración).
+[] Sea V espacio vectorial y W subespacio de V, entonces,
+[] 1) el 0 pertenece a W (observación 4.2.2, demostración),
+[] 2) si w en W, entonces -w en W observación 4.2.3, demostración).
+[] Sea V espacio vectorial, entonces el conjunto de todas las combinaciones lineales de un conjunto de vectores es un subespacio (teorema 4.2.7, enunciado preciso y demostración).
+[] Sea V espacio vectorial, entonces la intersección de subespacios es subespacio (teorema 4.2.10, demostración).
+[] Definición de subconjunto linealmente dependiente de un espacio vectorial (definición 4.3.1).
+[] Definición de base de un espacio vectorial (definicion 4.3.2) 
+[] Sea V un espacio vectorial de dimensión finita y sea n = dim(V), entonces, 1) cualquier subconjunto de V con más de n vectores es LD, 2) ningún subconjunto de V con menos de n vectores puede generar a V (corolario 4.3.6, demostración).
+[] Sea V espacio vectorial y S subconjunto LI de V, entonces si w no pertenece a <S>, entonces S unión {w} es LI (lema 4.3.7, demostración).
+[] Sea V espacio vectorial de dimensión finita y V distinto de {0}, entonces dim V > 0 (corolario 4.3.10). 
+[] 5. Si T es transformación lineal, entonces T(0) = 0 (observación de la página 145, demostración).
+[] Sea T transformación lineal, definición de Nu(T) e Im(T) (definición 5.2.1).
+[] Sea T transformación lineal, entonces Nu(T) e Im(T) son subespacios (teorema 5.2.2, demostración).
+[] Teorema de la dimensión del núcleo e imagen (teorema 5.2.9, enunciado y demostración).
+[] Sea T transformación lineal, entonces T es monomorfismo si y sólo si Nu(T) = 0 (proposición 5.3.2, demostración).
+[] Sea T : V -> W transformación lineal, entonces, 1) T es monomorfismo si y sólo si T de un conjunto LI es LI, 2) T es epimorfismo si y sólo si T de un conjunto de generadores de V es un conjunto de generadores de W (proposición 5.3.3, demostración).
+[] Sea V espacio vectorial de dimensión finita y B base ordenada, entonces todo vector se puede escribir de una única forma como cmbinación lineal de vectores de B (proposición 5.5.2, enunciado preciso y demostración).
+[] Definición de matriz de una transformación lineal entre espacios de dimensión finita (definición 5.6.1).
+[] Autovectores con autovalores diferentes son LI (teorema 5.3.7, enunciado preciso y demostración).
+[] Sea V espacio vectorial de dimensión finita y T : V -> V lineal. Entonces t es autovalor si y sólo si t es raíz del polinomio característico (proposición 5.7.7, demostración).

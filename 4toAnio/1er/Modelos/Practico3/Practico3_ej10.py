@@ -1,11 +1,13 @@
-from random import random 
+from random import random
 import numpy as np
 # La v.a X tiene distribucion de probabilidad dada por
 # P(X = j) = (1/2)**j+1  +  ((1/2)
 # *(2**(j-1)))  /  (3**j)
 
-def g(j) :
-  return ((1/2)**(j+1))+((1/2 * 2**j-1)/3**j)
+
+def g(j):
+    return ((1 / 2) ** (j + 1)) + ((1 / 2 * 2**j - 1) / 3**j)
+
 
 def generar_v_a():
     U = random()
@@ -16,6 +18,7 @@ def generar_v_a():
         F += g(i)
     return i
 
+
 def esperanza():
     acumulador_esperanza = 0
     i = 0
@@ -24,11 +27,12 @@ def esperanza():
         i += 1
     return acumulador_esperanza
 
+
 acum = 0
 N_sim = 1_000
 for _ in range(N_sim):
     # print(generar_v_a())
     acum += generar_v_a()
 
-print(f'Esperanza de v.a: E[x] = {acum / N_sim}')
-print(f'Esperanza  E[x] = {esperanza()}')
+print(f"Esperanza de v.a: E[x] = {acum / N_sim}")
+print(f"Esperanza  E[x] = {esperanza()}")
